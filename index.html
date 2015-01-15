@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>flight-forecast.com</title>
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+<body>
+
+<div class="header">
+  <h1>flight-forecast.com</h1>
+  <h5>
+    <small class="js-last-updated"><strong>Last Updated: </strong></small><br>
+    <small><a href="https://publicdata-airports.firebaseio.com/">Data provided by Firebase and services.faa.gov</a></small>
+  </h5>
+</div>
+<div class="main js-app">
+  <div class="panel">
+    <p>Hover an airport name to see additional details such as delays and weather. Choose an airport from the dropdown below to bring it to the top. Airports currently experiencing delays are highlighted with red.</p>
+    <input class="js-geodata hide" type="text" data="">
+    <label>Choose an airport:
+      <select class="js-search"><option value="">-- Select --</option></select>
+    </label>
+    <h3 class="panel-title hide">Click and drag to reorder airports.</h3>
+  </div>
+  <div class="js-airports"></div>
+</div>
+
+<script src='https://cdn.firebase.com/js/client/2.1.1/firebase.js'></script>
+<script src='http://use.typekit.net/dxd7fnz.js'></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>

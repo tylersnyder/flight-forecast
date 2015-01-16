@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- License Agreement at http://iconmonstr.com/license/ -->
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path id="pin-2-icon" d="M276.332,328v93.667L235.667,462V328H276.332z M295.227,80c-8.287,14.458-16.573,33.71-16.573,62.352
+	c0,66,44.222,81.726,54.957,130.648H178.37c10.687-48.968,54.978-64.5,54.978-130.648c0-28.768-8.253-47.967-16.529-62.352H295.227
+	 M340.947,50H171.054c1.369,32.805,32.294,42.523,32.294,92.352v0.01c0,64.725-57.89,68.699-57.89,160.638h221.084
+	c0-91.639-57.889-96.11-57.889-160.648C308.653,92.916,339.592,82.506,340.947,50z"/>
+</svg>

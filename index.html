@@ -5,26 +5,42 @@
   <title>flight-forecast.com</title>
   <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
 </head>
-<body>
+<body class="js-app">
 
-<div class="header">
+<header class="header">
   <h1>flight-forecast.com</h1>
   <h5>
     <small class="js-last-updated"><strong>Last Updated: </strong></small><br>
     <small><a href="https://publicdata-airports.firebaseio.com/">Data provided by Firebase and services.faa.gov</a></small>
   </h5>
-</div>
-<div class="main js-app">
-  <div class="panel">
-    <p>Hover an airport name to see additional details such as delays and weather. Choose an airport from the dropdown below to bring it to the top. Airports currently experiencing delays are highlighted with red.</p>
-    <input class="js-geodata hide" type="text" data="">
-    <label>Choose an airport:
-      <select class="js-search"><option value="">-- Select --</option></select>
-    </label>
-    <h3 class="panel-title hide">Click and drag to reorder airports.</h3>
+</header>
+
+<main class="main">
+
+  <div class="panel dashboard hide">
+    <div class="one-half-column">
+      <p class="app-info">Hover an airport name to see additional details such as delays and weather. Choose an airport from the dropdown below to bring it to the top. Airports currently experiencing delays are highlighted with red.</p>
+    </div>
+    <div class="one-half-column">
+      <label>Choose an airport:
+        <select class="js-search"><option value="">-- Select --</option></select>
+      </label>
+    </div>
   </div>
-  <div class="js-airports"></div>
-</div>
+
+  <div class="pinboard js-pinboard">
+    <h2 class="pinboard-title">Pinboard</h2>
+    <p>Click a pin icon to pin an airport up here!</p>
+  </div>
+
+  <div class="container">
+    <div class="js-airports"></div>
+  </div>
+</main>
+
+<footer class="contentinfo"></footer>
+
+<input class="js-geodata hide" type="hidden" data="">
 
 <script src='https://cdn.firebase.com/js/client/2.1.1/firebase.js'></script>
 <script src='http://use.typekit.net/dxd7fnz.js'></script>

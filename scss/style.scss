@@ -6,6 +6,7 @@ body {
   margin: 0 auto;
   font-family: "Proxima Nova Soft", "proxima-nova-soft", "Helvetica", "Arial", sans-serif;
   font-weight: 100;
+  font-size: 16px;
   color: #333;
 }
 
@@ -14,12 +15,12 @@ body {
   background-color: royalblue;
   color: #fff;
   @extend %clearfix;
-  
+
   h1 {
     margin: 0;
     float: left;
   }
-  
+
   h5 {
     text-align: right;
     a { color: #fff; }
@@ -31,7 +32,7 @@ body {
   }
 }
 
-.main {
+.container {
   max-width: 600px;
 
   @media (min-width: 480px) {
@@ -43,14 +44,16 @@ p {
   line-height: 1.5;
   margin: 0 0 15px;
 }
-.panel {
-  display: block;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  background-color: #f0f0f0;
-  
-  > .panel-title { margin: 0 0 10px; }
+
+.small,
+small { font-size: 80%; }
+
+hr {
+  padding: 0;
+  margin: 0;
+  height: 1px;
+  border: none;
+  background-color: #ddd;
 }
 
 label {
@@ -79,60 +82,133 @@ select {
   background-repeat: no-repeat;
 }
 
-.js-airport {
-  border-left: 10px solid mediumseagreen;
+.panel {
+  display: block;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+
+  > .panel-title { margin: 0 0 10px; }
+
+  h3 { margin: 0 0 5px; }
+  h5 { margin: 0; }
+}
+
+.dashboard {
+  margin-bottom: 0;
+  @extend %clearfix;
+
+  .app-info {
+    margin: 0;
+    font-size: 15px;
+  }
+}
+
+.pinboard {
+  width: 100%;
+  display: block;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #eee;
+  @extend %clearfix;
+
+  .pinboard-title { margin: 0 0 15px; }
+
+  p { margin: 0; }
+
+  .airport {
+    margin: 0;
+    background-color: #fff;
+  }
+}
+
+.airport {
+  @extend .panel;
 
   &.js-airport-delayed {
     border-left-color: #880000;
     background-color: #e80000;
     color: #fff;
   }
-  
+
+  .js-airport-name {
+    max-height: 21px;
+    overflow: hidden;
+  }
+
   &:hover .fade {
     @extend .in;
-    
+
     &:first-of-type {
       margin-top: 10px;
       padding-top: 5px;
       border-top: 1px solid #d0d0d0;
     }
   }
-  
-  h3 { margin: 0 0 5px; }
-  h5 { margin: 0; }
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-size: 14px;
-    color: #333;
+  .icon-pin {
+    float: right;
+    transform: rotate(22.5deg);
+
+    &:hover {
+      background-size: 19px;
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+  }
+
+  span[data-key] {
+    display: block;
+
+    &:before {
+      content: attr(data-key);
+      padding: 4px 4px 2px;
+      margin: 5px 5px 0 0;
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #333;
+      color: #fff;
+      text-transform: capitalize;
+      font-weight: bold;
+      font-size: 0.8em;
+    }
+
+    &:empty {
+      display: none;
+    }
   }
 }
 
-span[data-key] {
-  display: block;
-  
-  &:before {
-    content: attr(data-key);
-    padding: 4px 4px 2px;
-    margin: 5px 5px 0 0;
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #333;
-    color: #fff;
-    text-transform: capitalize;
-    font-weight: bold;
-    font-size: 0.8em;
-  }
-  
-  &:empty {
-    display: none;
+.grid {
+  @extend %clearfix;
+}
+
+[class*='-column'] {
+  float: left;
+  padding-right: 15px;
+
+  &.extra-pad { padding-right: 30px; }
+
+  &:last-of-type {
+    padding-right: 0;
   }
 }
 
-.small,
-small { font-size: 80%; }
+.one-third-column { width: 33.3333%; }
+.one-half-column { width: 50%; }
+.one-fourth-column { width: 25%; }
+.one-fifth-column { width: 20%; }
+
+.icon {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  transition: all 0.2s ease;
+
+  &.icon-pin { background-image: url('../img/icon-pin.svg'); }
+}
 
 .hide { display: none !important; }
 
@@ -141,7 +217,7 @@ small { font-size: 80%; }
   overflow: hidden;
   opacity: 0;
   transition: all 0.6s ease;
-  
+
   &.in {
     max-height: 1000px;
     opacity: 1;
